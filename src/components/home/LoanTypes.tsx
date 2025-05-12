@@ -1,0 +1,101 @@
+
+import {
+  Home,
+  Briefcase,
+  GraduationCap,
+  Car,
+  CreditCard,
+  Building
+} from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+
+const loanTypes = [
+  {
+    icon: <Home className="h-10 w-10" />,
+    title: "Mortgage Loans",
+    description: "Find competitive mortgage rates for your dream home",
+    bgColor: "bg-blue-50",
+    iconColor: "text-blue-500"
+  },
+  {
+    icon: <Briefcase className="h-10 w-10" />,
+    title: "Business Loans",
+    description: "Capital to help your business grow and succeed",
+    bgColor: "bg-green-50",
+    iconColor: "text-green-500"
+  },
+  {
+    icon: <GraduationCap className="h-10 w-10" />,
+    title: "Education Loans",
+    description: "Finance your education with flexible repayment options",
+    bgColor: "bg-purple-50",
+    iconColor: "text-purple-500"
+  },
+  {
+    icon: <Car className="h-10 w-10" />,
+    title: "Auto Loans",
+    description: "Get on the road with affordable auto financing",
+    bgColor: "bg-orange-50",
+    iconColor: "text-orange-500"
+  },
+  {
+    icon: <CreditCard className="h-10 w-10" />,
+    title: "Personal Loans",
+    description: "Flexible financing for your personal needs",
+    bgColor: "bg-pink-50",
+    iconColor: "text-pink-500"
+  },
+  {
+    icon: <Building className="h-10 w-10" />,
+    title: "Real Estate Investment",
+    description: "Funding for your real estate investment properties",
+    bgColor: "bg-teal-50",
+    iconColor: "text-teal-500"
+  }
+];
+
+const LoanTypes = () => {
+  return (
+    <section id="loan-types" className="section-padding bg-gray-50">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Loan Products</h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            We offer a variety of loan products tailored to meet your specific financial needs.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {loanTypes.map((loan, index) => (
+            <div 
+              key={index} 
+              className="bg-white rounded-xl shadow-soft overflow-hidden transition-all hover:shadow-card"
+            >
+              <div className={cn("p-6", loan.bgColor)}>
+                <div className={cn("mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-white", loan.iconColor)}>
+                  {loan.icon}
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-3">{loan.title}</h3>
+                <p className="text-gray-600 mb-4">{loan.description}</p>
+                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
+                  Learn More
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-16 text-center">
+          <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg">
+            View All Loan Options
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default LoanTypes;
