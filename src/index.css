@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/intuxicated/css-persian/dist/fontiran.min.css');
 
 @tailwind base;
 @tailwind components;
@@ -16,10 +16,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
 
-    --primary: 245 80% 59%;
+    --primary: 230 80% 50%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 160 84% 39%;
+    --secondary: 170 84% 39%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
@@ -33,7 +33,7 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 245 80% 59%;
+    --ring: 230 80% 50%;
 
     --radius: 0.75rem;
   }
@@ -44,7 +44,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-['Inter',sans-serif];
+    @apply bg-background text-foreground font-['iranyekan', 'IRANYekan', sans-serif];
   }
 }
 
@@ -65,4 +65,20 @@
     content: '';
     @apply absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 transition-opacity duration-300 ease-in-out transform translate-x-[-100%] animate-shimmer;
   }
+  
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  }
+  
+  .input-focus {
+    @apply focus:ring-2 focus:ring-primary/30 focus:border-primary;
+  }
+}
+
+/* Fix RTL issues with Tailwind */
+.space-x-1 > :not([hidden]) ~ :not([hidden]),
+.space-x-2 > :not([hidden]) ~ :not([hidden]),
+.space-x-3 > :not([hidden]) ~ :not([hidden]),
+.space-x-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 1;
 }

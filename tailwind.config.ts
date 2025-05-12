@@ -23,6 +23,9 @@ export default {
       }
     },
     extend: {
+      fontFamily: {
+        sans: ['iranyekan', 'IRANYekan', 'sans-serif'],
+      },
       textDirection: {
         rtl: 'rtl',
       },
@@ -82,6 +85,10 @@ export default {
         shimmer: {
           '0%': { backgroundPosition: '-200% 0' },
           '100%': { backgroundPosition: '200% 0' },
+        },
+        pulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.7' },
         }
       },
       animation: {
@@ -89,11 +96,13 @@ export default {
         'accordion-up': 'accordion-up 0.2s ease-out',
         'float': 'float 6s ease-in-out infinite',
         'shimmer': 'shimmer 2s linear infinite',
+        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       boxShadow: {
         'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
         'card': '0px 4px 12px rgba(0, 0, 0, 0.05)',
-      }
+        'hover': '0 10px 25px rgba(0, 0, 0, 0.08)',
+      },
     }
   },
   plugins: [require("tailwindcss-animate")],

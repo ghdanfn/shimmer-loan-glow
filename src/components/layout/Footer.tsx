@@ -11,8 +11,8 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-bold mb-4 flex items-center">
-              <span className="text-primary">لـنـ</span>
-              <span className="text-secondary">ـدو</span>
+              <span className="text-primary">لـن</span>
+              <span className="text-secondary">تک</span>
             </h3>
             <p className="text-gray-300 mb-6">
               ارائه وام‌های قابل دسترسی برای همه با شرایط شفاف و نرخ‌های رقابتی.
@@ -55,7 +55,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Mail size={18} className="ml-2 text-primary" />
-                <a href="mailto:info@lendo.ir" className="text-gray-300 hover:text-primary">info@lendo.ir</a>
+                <a href="mailto:info@lentak.ir" className="text-gray-300 hover:text-primary">info@lentak.ir</a>
               </li>
             </ul>
           </div>
@@ -66,21 +66,21 @@ const Footer = () => {
             <p className="text-gray-300 mb-4">
               برای دریافت آخرین اخبار و پیشنهادات در خبرنامه ما عضو شوید.
             </p>
-            <div className="flex space-x-2">
-              <Button className="bg-primary hover:bg-primary/90">
+            <div className="flex flex-row-reverse space-x-reverse space-x-2">
+              <Button className="bg-primary hover:bg-primary/90 shadow-md">
                 عضویت
               </Button>
               <Input 
                 type="email" 
                 placeholder="ایمیل شما" 
-                className="bg-gray-800 border-gray-700 text-white focus:border-primary"
+                className="bg-gray-800 border-gray-700 text-white focus:border-primary input-focus"
               />
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} لندو. تمامی حقوق محفوظ است.</p>
+          <p>&copy; {new Date().getFullYear()} لن تک. تمامی حقوق محفوظ است.</p>
           <div className="mt-2 space-x-4">
             <a href="#" className="hover:text-primary transition-colors">سیاست حریم خصوصی</a>
             <span>|</span>

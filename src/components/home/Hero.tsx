@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
+import { ArrowLeft } from "lucide-react"; 
 
 const LoanCalculator = () => {
   const [loanAmount, setLoanAmount] = useState(10000);
@@ -23,11 +24,21 @@ const LoanCalculator = () => {
     const payment = (principal * rate * Math.pow(1 + rate, term)) / (Math.pow(1 + rate, term) - 1);
     return payment.toFixed(2);
   };
+  
+  const handleLoanRequest = () => {
+    console.log("Requesting loan:", {
+      amount: loanAmount,
+      term: loanTerm,
+      type: loanType,
+      monthlyPayment: calculateMonthlyPayment()
+    });
+    // In a real application, this would submit the loan application
+  };
 
   const monthlyPayment = calculateMonthlyPayment();
 
   return (
-    <div className="bg-white rounded-xl shadow-card p-6 md:p-8">
+    <div className="bg-white rounded-xl shadow-lg p-6 md:p-8 card-hover">
       <h3 className="text-xl font-semibold mb-6 text-center">محاسبه گر وام</h3>
       
       <div className="mb-8">
@@ -42,7 +53,7 @@ const LoanCalculator = () => {
               className={cn(
                 "flex-1 py-2 px-4 text-sm font-medium rounded-lg transition-colors",
                 loanType === type
-                  ? "bg-primary text-white"
+                  ? "bg-primary text-white shadow-md"
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               )}
             >
@@ -110,7 +121,12 @@ const LoanCalculator = () => {
         </div>
       </div>
 
-      <Button className="w-full mt-6 bg-primary hover:bg-primary/90">درخواست وام</Button>
+      <Button 
+        className="w-full mt-6 bg-primary hover:bg-primary/90 shadow-md hover:shadow-lg transition-all"
+        onClick={handleLoanRequest}
+      >
+        درخواست وام
+      </Button>
     </div>
   );
 };
@@ -128,17 +144,18 @@ const Hero = () => {
               وجوه مورد نیاز خود را با نرخ های رقابتی و شرایط انعطاف پذیر دریافت کنید.
               به صورت آنلاین درخواست دهید و تصمیمات تأیید سریع دریافت کنید.
             </p>
-            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-              <Button className="bg-primary hover:bg-primary/90 text-white font-medium py-6 px-8 text-lg">
+            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
+              <Button className="bg-primary hover:bg-primary/90 text-white font-medium py-6 px-8 text-lg shadow-lg hover:shadow-xl transition-all">
                 شروع کنید
+                <ArrowLeft className="mr-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 font-medium py-6 px-8 text-lg">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 font-medium py-6 px-8 text-lg transition-all">
                 اطلاعات بیشتر
               </Button>
             </div>
           </div>
           
-          <div>
+          <div className="transform hover:scale-[1.01] transition-transform duration-300">
             <LoanCalculator />
           </div>
         </div>

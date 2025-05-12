@@ -26,7 +26,10 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-primary">لـنــ<span className="text-secondary">ـدو</span></span>
+              <span className="text-2xl font-bold">
+                <span className="text-primary">لــن</span>
+                <span className="text-secondary">تک</span>
+              </span>
             </a>
           </div>
 
@@ -48,7 +51,7 @@ const Header = () => {
             <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
               ورود
             </Button>
-            <Button className="bg-primary text-white hover:bg-primary/90">
+            <Button className="bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg transition-all">
               درخواست وام
             </Button>
           </div>
@@ -86,7 +89,7 @@ const Header = () => {
             <Button variant="outline" className="w-full border-primary text-primary">
               ورود
             </Button>
-            <Button className="w-full bg-primary text-white">
+            <Button className="w-full bg-primary text-white shadow-md">
               درخواست وام
             </Button>
           </div>
