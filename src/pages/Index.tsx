@@ -11,7 +11,7 @@ import CTA from "@/components/home/CTA";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" dir="rtl">
       <Header />
       <main className="flex-1">
         <Hero />

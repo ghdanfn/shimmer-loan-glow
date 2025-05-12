@@ -13,43 +13,43 @@ import { cn } from "@/lib/utils";
 const loanTypes = [
   {
     icon: <Home className="h-10 w-10" />,
-    title: "Mortgage Loans",
-    description: "Find competitive mortgage rates for your dream home",
+    title: "وام مسکن",
+    description: "نرخ های رقابتی وام مسکن برای خانه رویایی شما",
     bgColor: "bg-blue-50",
     iconColor: "text-blue-500"
   },
   {
     icon: <Briefcase className="h-10 w-10" />,
-    title: "Business Loans",
-    description: "Capital to help your business grow and succeed",
+    title: "وام تجاری",
+    description: "سرمایه برای کمک به رشد و موفقیت کسب و کار شما",
     bgColor: "bg-green-50",
     iconColor: "text-green-500"
   },
   {
     icon: <GraduationCap className="h-10 w-10" />,
-    title: "Education Loans",
-    description: "Finance your education with flexible repayment options",
+    title: "وام تحصیلی",
+    description: "تامین مالی تحصیلات خود با گزینه های بازپرداخت انعطاف پذیر",
     bgColor: "bg-purple-50",
     iconColor: "text-purple-500"
   },
   {
     icon: <Car className="h-10 w-10" />,
-    title: "Auto Loans",
-    description: "Get on the road with affordable auto financing",
+    title: "وام خودرو",
+    description: "با تامین مالی مقرون به صرفه خودرو در جاده قرار بگیرید",
     bgColor: "bg-orange-50",
     iconColor: "text-orange-500"
   },
   {
     icon: <CreditCard className="h-10 w-10" />,
-    title: "Personal Loans",
-    description: "Flexible financing for your personal needs",
+    title: "وام شخصی",
+    description: "تامین مالی انعطاف پذیر برای نیازهای شخصی شما",
     bgColor: "bg-pink-50",
     iconColor: "text-pink-500"
   },
   {
     icon: <Building className="h-10 w-10" />,
-    title: "Real Estate Investment",
-    description: "Funding for your real estate investment properties",
+    title: "سرمایه گذاری املاک",
+    description: "تامین مالی برای املاک سرمایه گذاری شما",
     bgColor: "bg-teal-50",
     iconColor: "text-teal-500"
   }
@@ -60,9 +60,9 @@ const LoanTypes = () => {
     <section id="loan-types" className="section-padding bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Loan Products</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">محصولات وام</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            We offer a variety of loan products tailored to meet your specific financial needs.
+            ما انواع مختلفی از محصولات وام را ارائه می‌دهیم که مطابق با نیازهای مالی خاص شما طراحی شده‌اند.
           </p>
         </div>
 
@@ -81,7 +81,7 @@ const LoanTypes = () => {
                 <h3 className="text-xl font-semibold mb-3">{loan.title}</h3>
                 <p className="text-gray-600 mb-4">{loan.description}</p>
                 <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
-                  Learn More
+                  اطلاعات بیشتر
                 </Button>
               </div>
             </div>
@@ -90,7 +90,7 @@ const LoanTypes = () => {
 
         <div className="mt-16 text-center">
           <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg">
-            View All Loan Options
+            مشاهده تمام گزینه‌های وام
           </Button>
         </div>
       </div>

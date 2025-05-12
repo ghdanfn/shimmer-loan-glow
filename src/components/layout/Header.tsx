@@ -5,11 +5,11 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const menuItems = [
-  { label: "Home", href: "#" },
-  { label: "Personal Loans", href: "#personal-loans" },
-  { label: "Business Loans", href: "#business-loans" },
-  { label: "How It Works", href: "#how-it-works" },
-  { label: "About Us", href: "#about" }
+  { label: "صفحه اصلی", href: "#" },
+  { label: "وام شخصی", href: "#personal-loans" },
+  { label: "وام تجاری", href: "#business-loans" },
+  { label: "نحوه کار", href: "#how-it-works" },
+  { label: "درباره ما", href: "#about" }
 ];
 
 const Header = () => {
@@ -26,7 +26,7 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center">
             <a href="/" className="flex items-center">
-              <span className="text-2xl font-bold text-primary">Loan<span className="text-secondary">Ease</span></span>
+              <span className="text-2xl font-bold text-primary">لـنــ<span className="text-secondary">ـدو</span></span>
             </a>
           </div>
 
@@ -46,10 +46,10 @@ const Header = () => {
           {/* Call to Action */}
           <div className="hidden md:flex items-center space-x-4">
             <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
-              Log In
+              ورود
             </Button>
             <Button className="bg-primary text-white hover:bg-primary/90">
-              Apply Now
+              درخواست وام
             </Button>
           </div>
 
@@ -84,10 +84,10 @@ const Header = () => {
           </nav>
           <div className="grid grid-cols-2 gap-4 pt-4">
             <Button variant="outline" className="w-full border-primary text-primary">
-              Log In
+              ورود
             </Button>
             <Button className="w-full bg-primary text-white">
-              Apply Now
+              درخواست وام
             </Button>
           </div>
         </div>

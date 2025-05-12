@@ -10,23 +10,23 @@ import {
 const steps = [
   {
     icon: <FormInput className="h-12 w-12 text-primary" />,
-    title: "Complete Application",
-    description: "Fill out our simple online application in just a few minutes."
+    title: "تکمیل درخواست",
+    description: "درخواست آنلاین ساده ما را در چند دقیقه تکمیل کنید."
   },
   {
     icon: <CheckCircle2 className="h-12 w-12 text-primary" />,
-    title: "Get Approval",
-    description: "Receive a quick decision after our automated review process."
+    title: "دریافت تایید",
+    description: "پس از بررسی خودکار سیستم، سریعاً تصمیم نهایی را دریافت کنید."
   },
   {
     icon: <DollarSign className="h-12 w-12 text-primary" />,
-    title: "Receive Funds",
-    description: "Once approved, get funds directly deposited to your account."
+    title: "دریافت وجه",
+    description: "پس از تایید، وجوه مستقیماً به حساب شما واریز می‌شود."
   },
   {
     icon: <Sparkles className="h-12 w-12 text-primary" />,
-    title: "Enjoy Benefits",
-    description: "Take advantage of competitive rates and flexible repayment terms."
+    title: "بهره‌مندی از مزایا",
+    description: "از نرخ‌های رقابتی و شرایط بازپرداخت انعطاف‌پذیر بهره‌مند شوید."
   }
 ];
 
@@ -35,9 +35,9 @@ const HowItWorks = () => {
     <section id="how-it-works" className="section-padding bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">How It Works</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">نحوه کار</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Our simple four-step process makes getting a loan quick and hassle-free.
+            فرآیند چهار مرحله‌ای ساده ما، دریافت وام را سریع و بدون دردسر می‌کند.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ const HowItWorks = () => {
                     {step.icon}
                   </div>
                   <h3 className="text-xl font-semibold mb-3">
-                    <span className="inline-block w-8 h-8 rounded-full bg-primary text-white text-sm leading-8 mr-2">
+                    <span className="inline-block w-8 h-8 rounded-full bg-primary text-white text-sm leading-8 ml-2">
                       {index + 1}
                     </span>
                     {step.title}
@@ -66,9 +66,9 @@ const HowItWorks = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="text-lg mb-6">Ready to get started with your loan application?</p>
+          <p className="text-lg mb-6">آماده شروع درخواست وام خود هستید؟</p>
           <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg">
-            Apply Now
+            درخواست وام
           </Button>
         </div>
       </div>

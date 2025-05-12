@@ -11,33 +11,33 @@ import {
 const features = [
   {
     icon: <Clock className="h-8 w-8 text-primary" />,
-    title: "Quick Approval",
-    description: "Get approved for your loan in minutes with our streamlined application process."
+    title: "تایید سریع",
+    description: "با فرآیند درخواست ساده‌ی ما، در عرض چند دقیقه وام خود را تایید کنید."
   },
   {
     icon: <ShieldCheck className="h-8 w-8 text-primary" />,
-    title: "Safe & Secure",
-    description: "Your personal information is protected with military-grade encryption and security protocols."
+    title: "امن و مطمئن",
+    description: "اطلاعات شخصی شما با رمزگذاری و پروتکل‌های امنیتی در سطح نظامی محافظت می‌شود."
   },
   {
     icon: <Wallet className="h-8 w-8 text-primary" />,
-    title: "Competitive Rates",
-    description: "Access the best loan rates from our network of trusted lenders and financial institutions."
+    title: "نرخ‌های رقابتی",
+    description: "به بهترین نرخ‌های وام از شبکه‌ای از وام‌دهندگان و موسسات مالی معتبر دسترسی پیدا کنید."
   },
   {
     icon: <DollarSign className="h-8 w-8 text-primary" />,
-    title: "Flexible Terms",
-    description: "Customize your loan terms and repayment schedule to fit your financial situation."
+    title: "شرایط انعطاف‌پذیر",
+    description: "شرایط وام و برنامه بازپرداخت خود را مطابق با وضعیت مالی خود سفارشی کنید."
   },
   {
     icon: <FileText className="h-8 w-8 text-primary" />,
-    title: "Transparent Process",
-    description: "No hidden fees or charges. We believe in complete transparency throughout the loan process."
+    title: "فرآیند شفاف",
+    description: "بدون هزینه‌های پنهان. ما به شفافیت کامل در تمام مراحل فرآیند وام اعتقاد داریم."
   },
   {
     icon: <TrendingUp className="h-8 w-8 text-primary" />,
-    title: "Build Credit",
-    description: "Improve your credit score with timely loan repayments reported to major credit bureaus."
+    title: "بهبود اعتبار",
+    description: "با پرداخت‌های به موقع وام که به دفاتر اعتباری اصلی گزارش می‌شود، امتیاز اعتباری خود را بهبود دهید."
   }
 ];
 
@@ -46,9 +46,9 @@ const Features = () => {
     <section id="features" className="section-padding bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose LoanEase</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">چرا لندو را انتخاب کنیم</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            We provide a seamless and hassle-free loan experience with benefits designed to meet your financial needs.
+            ما تجربه وام بدون دردسر و آسان با مزایایی طراحی شده برای رفع نیازهای مالی شما را فراهم می‌کنیم.
           </p>
         </div>
 

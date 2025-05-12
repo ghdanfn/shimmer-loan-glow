@@ -8,34 +8,34 @@ import {
 
 const faqs = [
   {
-    question: "What are the requirements to apply for a loan?",
+    question: "شرایط لازم برای درخواست وام چیست؟",
     answer:
-      "To apply for a loan with LoanEase, you'll need to be at least 18 years old, have a valid government ID, proof of income, and a checking account. Specific requirements may vary depending on the loan type and amount you're requesting.",
+      "برای درخواست وام در لندو، باید حداقل ۱۸ سال سن داشته باشید، کارت شناسایی معتبر دولتی، مدرک درآمد و یک حساب جاری داشته باشید. شرایط خاص ممکن است بسته به نوع و مقدار وامی که درخواست می‌کنید متفاوت باشد.",
   },
   {
-    question: "How long does the application process take?",
+    question: "مدت زمان فرآیند درخواست چقدر است؟",
     answer:
-      "Our online application typically takes just 5-10 minutes to complete. After submission, you may receive an initial decision in as little as a few minutes. Once approved, funds can be deposited into your account within 24 hours to a few business days, depending on the loan type.",
+      "درخواست آنلاین ما معمولاً فقط ۵ تا ۱۰ دقیقه طول می‌کشد. پس از ارسال، ممکن است در عرض چند دقیقه تصمیم اولیه را دریافت کنید. پس از تایید، وجوه می‌تواند در عرض ۲۴ ساعت تا چند روز کاری به حساب شما واریز شود، بسته به نوع وام.",
   },
   {
-    question: "What interest rates do you offer?",
+    question: "چه نرخ‌های بهره‌ای ارائه می‌دهید؟",
     answer:
-      "Interest rates vary based on several factors including your credit score, loan amount, term length, and the type of loan. Our rates are competitive and start as low as 5.9% APR for qualified borrowers. You can use our loan calculator to get an estimate based on your specific situation.",
+      "نرخ‌های بهره بر اساس چندین عامل از جمله امتیاز اعتباری شما، مبلغ وام، مدت زمان وام و نوع وام متفاوت است. نرخ‌های ما رقابتی هستند و برای وام‌گیرندگان واجد شرایط از APR ۵.۹٪ شروع می‌شود. می‌توانید از ماشین حساب وام ما برای دریافت تخمین بر اساس وضعیت خاص خود استفاده کنید.",
   },
   {
-    question: "Can I apply if I have bad credit?",
+    question: "آیا با اعتبار ضعیف می‌توانم درخواست دهم؟",
     answer:
-      "Yes, we work with lenders who specialize in various credit situations. While having a good credit score helps you qualify for better rates, we have options for borrowers with less-than-perfect credit. We consider multiple factors beyond just your credit score when evaluating applications.",
+      "بله، ما با وام‌دهندگانی کار می‌کنیم که در شرایط اعتباری مختلف تخصص دارند. در حالی که داشتن امتیاز اعتباری خوب به شما کمک می‌کند تا برای نرخ‌های بهتر واجد شرایط شوید، ما گزینه‌هایی برای وام‌گیرندگان با اعتبار کمتر از عالی داریم. ما هنگام ارزیابی درخواست‌ها، عوامل متعددی فراتر از امتیاز اعتباری شما را در نظر می‌گیریم.",
   },
   {
-    question: "Are there any fees for applying?",
+    question: "آیا هزینه‌ای برای درخواست وجود دارد؟",
     answer:
-      "There are no fees to apply for a loan through LoanEase. Our service is completely free to use. Some loans may include origination fees or other charges from the lender, but these would be clearly disclosed before you accept any loan offer.",
+      "هیچ هزینه‌ای برای درخواست وام از طریق لندو وجود ندارد. خدمات ما کاملاً رایگان است. برخی وام‌ها ممکن است شامل هزینه‌های پردازش یا سایر هزینه‌ها از طرف وام‌دهنده باشد، اما این موارد قبل از اینکه هر پیشنهاد وامی را قبول کنید، به وضوح افشا می‌شود.",
   },
   {
-    question: "How do I make payments on my loan?",
+    question: "چگونه اقساط وام خود را پرداخت کنم؟",
     answer:
-      "Most loans offer automatic payments that are deducted from your bank account on the scheduled due date. You can also make manual payments online through your lender's portal. Payment options and methods will be provided once your loan is finalized.",
+      "اکثر وام‌ها پرداخت‌های خودکاری را ارائه می‌دهند که در تاریخ مقرر از حساب بانکی شما کسر می‌شود. همچنین می‌توانید از طریق پورتال وام‌دهنده خود پرداخت‌های دستی آنلاین انجام دهید. گزینه‌ها و روش‌های پرداخت پس از نهایی شدن وام شما ارائه خواهد شد.",
   },
 ];
 
@@ -45,10 +45,10 @@ const FAQ = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Frequently Asked Questions
+            سوالات متداول
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Find answers to commonly asked questions about our loan services.
+            پاسخ سوالات رایج درباره خدمات وام ما را پیدا کنید.
           </p>
         </div>
 
@@ -56,10 +56,10 @@ const FAQ = () => {
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger className="text-left font-medium">
+                <AccordionTrigger className="text-right font-medium">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-600">
+                <AccordionContent className="text-gray-600 text-right">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -69,13 +69,13 @@ const FAQ = () => {
 
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-4">
-            Don't see your question here? Contact our support team.
+            سوال شما اینجا نیست؟ با تیم پشتیبانی ما تماس بگیرید.
           </p>
           <a
             href="#contact"
             className="text-primary hover:underline font-medium"
           >
-            Get in touch
+            تماس با ما
           </a>
         </div>
       </div>

@@ -28,11 +28,11 @@ const LoanCalculator = () => {
 
   return (
     <div className="bg-white rounded-xl shadow-card p-6 md:p-8">
-      <h3 className="text-xl font-semibold mb-6 text-center">Loan Calculator</h3>
+      <h3 className="text-xl font-semibold mb-6 text-center">محاسبه گر وام</h3>
       
       <div className="mb-8">
         <div className="flex justify-between items-center mb-2">
-          <span className="text-sm font-medium text-gray-600">Loan Type</span>
+          <span className="text-sm font-medium text-gray-600">نوع وام</span>
         </div>
         <div className="flex space-x-2 mb-6">
           {Object.keys(interestRates).map((type) => (
@@ -46,7 +46,7 @@ const LoanCalculator = () => {
                   : "bg-gray-100 text-gray-700 hover:bg-gray-200"
               )}
             >
-              {type.charAt(0).toUpperCase() + type.slice(1)}
+              {type === "personal" ? "شخصی" : type === "business" ? "تجاری" : "تحصیلی"}
             </button>
           ))}
         </div>
@@ -56,8 +56,8 @@ const LoanCalculator = () => {
         {/* Loan Amount Slider */}
         <div>
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium text-gray-600">Loan Amount</span>
-            <span className="text-sm font-semibold">${loanAmount.toLocaleString()}</span>
+            <span className="text-sm font-medium text-gray-600">مبلغ وام</span>
+            <span className="text-sm font-semibold">{loanAmount.toLocaleString()} تومان</span>
           </div>
           <Slider
             defaultValue={[loanAmount]}
@@ -68,16 +68,16 @@ const LoanCalculator = () => {
             className="mb-2"
           />
           <div className="flex justify-between text-xs text-gray-500">
-            <span>$1,000</span>
-            <span>$50,000</span>
+            <span>۱,۰۰۰ تومان</span>
+            <span>۵۰,۰۰۰ تومان</span>
           </div>
         </div>
 
         {/* Loan Term Slider */}
         <div>
           <div className="flex justify-between items-center mb-2">
-            <span className="text-sm font-medium text-gray-600">Loan Term</span>
-            <span className="text-sm font-semibold">{loanTerm} months</span>
+            <span className="text-sm font-medium text-gray-600">مدت وام</span>
+            <span className="text-sm font-semibold">{loanTerm} ماه</span>
           </div>
           <Slider
             defaultValue={[loanTerm]}
@@ -88,8 +88,8 @@ const LoanCalculator = () => {
             className="mb-2"
           />
           <div className="flex justify-between text-xs text-gray-500">
-            <span>3 months</span>
-            <span>60 months</span>
+            <span>۳ ماه</span>
+            <span>۶۰ ماه</span>
           </div>
         </div>
       </div>
@@ -98,19 +98,19 @@ const LoanCalculator = () => {
       <div className="mt-8 p-4 bg-gray-50 rounded-lg">
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <p className="text-xs text-gray-500">Monthly Payment</p>
-            <p className="text-xl font-semibold text-primary">${monthlyPayment}</p>
+            <p className="text-xs text-gray-500">پرداخت ماهانه</p>
+            <p className="text-xl font-semibold text-primary">{monthlyPayment} تومان</p>
           </div>
           <div>
-            <p className="text-xs text-gray-500">Interest Rate</p>
+            <p className="text-xs text-gray-500">نرخ سود</p>
             <p className="text-xl font-semibold text-secondary">
-              {(interestRates[loanType as keyof typeof interestRates] * 100).toFixed(1)}%
+              {(interestRates[loanType as keyof typeof interestRates] * 100).toFixed(1)}٪
             </p>
           </div>
         </div>
       </div>
 
-      <Button className="w-full mt-6 bg-primary hover:bg-primary/90">Apply Now</Button>
+      <Button className="w-full mt-6 bg-primary hover:bg-primary/90">درخواست وام</Button>
     </div>
   );
 };
@@ -122,18 +122,18 @@ const Hero = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="max-w-lg">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="gradient-text">Smart Loans</span> for Your Financial Needs
+              <span className="gradient-text">وام هوشمند</span> برای نیازهای مالی شما
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8">
-              Get the funds you need with competitive rates and flexible terms. 
-              Apply online and receive quick approval decisions.
+              وجوه مورد نیاز خود را با نرخ های رقابتی و شرایط انعطاف پذیر دریافت کنید.
+              به صورت آنلاین درخواست دهید و تصمیمات تأیید سریع دریافت کنید.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
               <Button className="bg-primary hover:bg-primary/90 text-white font-medium py-6 px-8 text-lg">
-                Get Started
+                شروع کنید
               </Button>
               <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 font-medium py-6 px-8 text-lg">
-                Learn More
+                اطلاعات بیشتر
               </Button>
             </div>
           </div>

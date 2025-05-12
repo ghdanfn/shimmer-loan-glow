@@ -10,30 +10,30 @@ import { cn } from "@/lib/utils";
 
 const testimonials = [
   {
-    name: "Sarah Johnson",
-    role: "Small Business Owner",
-    content: "LoanEase made securing a business loan incredibly simple. Their rates were competitive and the process was transparent from start to finish. Highly recommended!",
+    name: "سارا جعفری",
+    role: "صاحب کسب و کار کوچک",
+    content: "لندو دریافت وام تجاری را برای من بسیار ساده کرد. نرخ‌ها رقابتی بود و روند از ابتدا تا انتها شفاف بود. قویاً توصیه می‌کنم!",
     rating: 5,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
-    name: "Michael Chen",
-    role: "First-time Home Buyer",
-    content: "As a first-time home buyer, I was nervous about the mortgage process. The team at LoanEase guided me through every step and helped me find a great rate. I'm now a proud homeowner!",
+    name: "محمد رضایی",
+    role: "خریدار اولین خانه",
+    content: "به عنوان خریدار اولین خانه، من در مورد فرآیند وام مسکن نگران بودم. تیم لندو من را در هر مرحله راهنمایی کرد و به من کمک کرد تا نرخ عالی پیدا کنم. اکنون من یک صاحب خانه افتخاری هستم!",
     rating: 5,
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
-    name: "Jessica Williams",
-    role: "College Student",
-    content: "Finding an education loan with favorable terms seemed impossible until I discovered LoanEase. Their application was easy and I got approved within days. Now I can focus on my studies!",
+    name: "الهام محمدی",
+    role: "دانشجو",
+    content: "پیدا کردن وام تحصیلی با شرایط مناسب غیرممکن به نظر می‌رسید تا اینکه لندو را پیدا کردم. درخواست آنها آسان بود و در عرض چند روز تأیید شدم. حالا می‌توانم روی تحصیلاتم تمرکز کنم!",
     rating: 4,
     image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   },
   {
-    name: "David Rodriguez",
-    role: "Auto Enthusiast",
-    content: "After being turned down by my bank for an auto loan, LoanEase connected me with lenders who understood my situation. The rates were better than expected and I drove off in my dream car.",
+    name: "داوود احمدی",
+    role: "علاقمند به خودرو",
+    content: "پس از رد شدن درخواست وام خودرو توسط بانکم، لندو من را به وام‌دهندگانی معرفی کرد که شرایط من را درک کردند. نرخ‌ها بهتر از حد انتظار بود و من با ماشین رویایی‌ام به خانه برگشتم.",
     rating: 5,
     image: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-1.2.1&auto=format&fit=crop&w=256&q=80"
   }
@@ -58,9 +58,9 @@ const Testimonials = () => {
     <section id="testimonials" className="section-padding bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">نظرات مشتریان ما</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Don't just take our word for it. Here's what customers have to say about their LoanEase experience.
+            فقط به حرف ما اعتماد نکنید. ببینید مشتریان در مورد تجربه خود با لندو چه می‌گویند.
           </p>
         </div>
 
@@ -77,7 +77,7 @@ const Testimonials = () => {
                     <div className="bg-white rounded-xl shadow-soft p-8">
                       <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center">
-                          <div className="w-14 h-14 rounded-full overflow-hidden mr-4">
+                          <div className="w-14 h-14 rounded-full overflow-hidden ml-4">
                             <img 
                               src={testimonial.image} 
                               alt={testimonial.name}
@@ -113,20 +113,20 @@ const Testimonials = () => {
             <Button 
               variant="outline"
               size="icon"
-              className="absolute top-1/2 -left-4 transform -translate-y-1/2 rounded-full bg-white border border-gray-200 shadow-sm"
+              className="absolute top-1/2 -right-4 transform -translate-y-1/2 rounded-full bg-white border border-gray-200 shadow-sm"
               onClick={prevTestimonial}
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronRight className="h-5 w-5" />
               <span className="sr-only">Previous</span>
             </Button>
             
             <Button 
               variant="outline"
               size="icon"
-              className="absolute top-1/2 -right-4 transform -translate-y-1/2 rounded-full bg-white border border-gray-200 shadow-sm"
+              className="absolute top-1/2 -left-4 transform -translate-y-1/2 rounded-full bg-white border border-gray-200 shadow-sm"
               onClick={nextTestimonial}
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronLeft className="h-5 w-5" />
               <span className="sr-only">Next</span>
             </Button>
           </div>

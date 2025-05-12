@@ -23,6 +23,9 @@ export default {
       }
     },
     extend: {
+      textDirection: {
+        rtl: 'rtl',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',

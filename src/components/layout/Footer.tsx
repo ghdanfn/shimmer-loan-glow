@@ -11,80 +11,80 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-bold mb-4 flex items-center">
-              <span className="text-primary">Loan</span>
-              <span className="text-secondary">Ease</span>
+              <span className="text-primary">لـنـ</span>
+              <span className="text-secondary">ـدو</span>
             </h3>
             <p className="text-gray-300 mb-6">
-              Making loans accessible to everyone with transparent terms and competitive rates.
+              ارائه وام‌های قابل دسترسی برای همه با شرایط شفاف و نرخ‌های رقابتی.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-primary transition-colors">
                 <Facebook size={20} />
-                <span className="sr-only">Facebook</span>
+                <span className="sr-only">فیسبوک</span>
               </a>
               <a href="#" className="text-gray-300 hover:text-primary transition-colors">
                 <Twitter size={20} />
-                <span className="sr-only">Twitter</span>
+                <span className="sr-only">توییتر</span>
               </a>
               <a href="#" className="text-gray-300 hover:text-primary transition-colors">
                 <Instagram size={20} />
-                <span className="sr-only">Instagram</span>
+                <span className="sr-only">اینستاگرام</span>
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-lg font-semibold mb-4">لینک‌های سریع</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">Loan Products</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">How It Works</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">FAQs</a></li>
-              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">Blog</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">درباره ما</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">محصولات وام</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">نحوه کار</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">سوالات متداول</a></li>
+              <li><a href="#" className="text-gray-300 hover:text-primary transition-colors">وبلاگ</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-lg font-semibold mb-4">تماس با ما</h3>
             <ul className="space-y-3">
               <li className="flex items-center">
-                <Phone size={18} className="mr-2 text-primary" />
-                <span className="text-gray-300">+1 (555) 123-4567</span>
+                <Phone size={18} className="ml-2 text-primary" />
+                <span className="text-gray-300">۰۲۱-۱۲۳۴۵۶۷۸</span>
               </li>
               <li className="flex items-center">
-                <Mail size={18} className="mr-2 text-primary" />
-                <a href="mailto:info@loanease.com" className="text-gray-300 hover:text-primary">info@loanease.com</a>
+                <Mail size={18} className="ml-2 text-primary" />
+                <a href="mailto:info@lendo.ir" className="text-gray-300 hover:text-primary">info@lendo.ir</a>
               </li>
             </ul>
           </div>
 
           {/* Newsletter */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Newsletter</h3>
+            <h3 className="text-lg font-semibold mb-4">خبرنامه</h3>
             <p className="text-gray-300 mb-4">
-              Subscribe to our newsletter for the latest updates and offers.
+              برای دریافت آخرین اخبار و پیشنهادات در خبرنامه ما عضو شوید.
             </p>
             <div className="flex space-x-2">
+              <Button className="bg-primary hover:bg-primary/90">
+                عضویت
+              </Button>
               <Input 
                 type="email" 
-                placeholder="Your email" 
+                placeholder="ایمیل شما" 
                 className="bg-gray-800 border-gray-700 text-white focus:border-primary"
               />
-              <Button className="bg-primary hover:bg-primary/90">
-                Subscribe
-              </Button>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400 text-sm">
-          <p>&copy; {new Date().getFullYear()} LoanEase. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} لندو. تمامی حقوق محفوظ است.</p>
           <div className="mt-2 space-x-4">
-            <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="#" className="hover:text-primary transition-colors">سیاست حریم خصوصی</a>
             <span>|</span>
-            <a href="#" className="hover:text-primary transition-colors">Terms of Service</a>
+            <a href="#" className="hover:text-primary transition-colors">شرایط استفاده</a>
           </div>
         </div>
       </div>
