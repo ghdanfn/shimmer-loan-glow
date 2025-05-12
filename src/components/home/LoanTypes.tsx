@@ -5,10 +5,13 @@ import {
   GraduationCap,
   Car,
   CreditCard,
-  Building
+  Building,
+  ArrowLeft
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
+import { toast } from "@/hooks/use-toast";
 
 const loanTypes = [
   {
@@ -56,11 +59,33 @@ const loanTypes = [
 ];
 
 const LoanTypes = () => {
+  const navigate = useNavigate();
+
+  const handleViewAllLoans = () => {
+    navigate("#all-loans");
+    toast({
+      title: "گزینه‌های وام",
+      description: "در حال مشاهده تمام گزینه‌های وام هستید",
+      variant: "default",
+    });
+    console.log("View all loans button clicked");
+  };
+
+  const handleLoanInfoClick = (loanType: string) => {
+    navigate(`#loan-info/${loanType}`);
+    toast({
+      title: `اطلاعات ${loanType}`,
+      description: `در حال مشاهده اطلاعات ${loanType} هستید`,
+      variant: "default",
+    });
+    console.log(`More info button clicked for ${loanType}`);
+  };
+
   return (
-    <section id="loan-types" className="section-padding bg-gray-50">
+    <section id="loan-types" className="section-padding bg-gradient-to-b from-gray-50 to-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">محصولات وام</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">محصولات وام</h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             ما انواع مختلفی از محصولات وام را ارائه می‌دهیم که مطابق با نیازهای مالی خاص شما طراحی شده‌اند.
           </p>
@@ -70,17 +95,21 @@ const LoanTypes = () => {
           {loanTypes.map((loan, index) => (
             <div 
               key={index} 
-              className="bg-white rounded-xl shadow-soft overflow-hidden transition-all hover:shadow-card"
+              className="glass-card overflow-hidden transition-all hover:shadow-xl hover-scale"
             >
               <div className={cn("p-6", loan.bgColor)}>
-                <div className={cn("mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-white", loan.iconColor)}>
+                <div className={cn("mx-auto w-16 h-16 flex items-center justify-center rounded-full bg-white shadow-md", loan.iconColor)}>
                   {loan.icon}
                 </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3">{loan.title}</h3>
-                <p className="text-gray-600 mb-4">{loan.description}</p>
-                <Button variant="outline" className="w-full border-primary text-primary hover:bg-primary hover:text-white">
+                <p className="text-gray-600 mb-6">{loan.description}</p>
+                <Button 
+                  variant="outline" 
+                  className="w-full border-primary text-primary hover:bg-primary hover:text-white button-modern"
+                  onClick={() => handleLoanInfoClick(loan.title)}
+                >
                   اطلاعات بیشتر
                 </Button>
               </div>
@@ -89,8 +118,12 @@ const LoanTypes = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg">
+          <Button 
+            className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg shadow-lg hover:shadow-xl transition-all button-modern"
+            onClick={handleViewAllLoans}
+          >
             مشاهده تمام گزینه‌های وام
+            <ArrowLeft className="mr-2 h-5 w-5" />
           </Button>
         </div>
       </div>

@@ -54,7 +54,7 @@
   }
   
   .section-padding {
-    @apply py-16 md:py-24;
+    @apply py-20 md:py-28;
   }
   
   .btn-shine {
@@ -67,11 +67,28 @@
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
   }
   
   .input-focus {
     @apply focus:ring-2 focus:ring-primary/30 focus:border-primary;
+  }
+
+  /* Modern UI components */
+  .glass-card {
+    @apply bg-white/70 backdrop-blur-sm border border-white/20 shadow-lg rounded-xl;
+  }
+  
+  .modern-gradient {
+    @apply bg-gradient-to-br from-primary/90 to-secondary/90;
+  }
+  
+  .hover-scale {
+    @apply transition-transform hover:scale-105 duration-300;
+  }
+  
+  .button-modern {
+    @apply rounded-xl py-4 px-6 font-medium transition-all duration-300;
   }
 }
 
@@ -81,4 +98,14 @@
 .space-x-3 > :not([hidden]) ~ :not([hidden]),
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 1;
+}
+
+/* Modern animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }
