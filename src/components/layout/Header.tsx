@@ -1,22 +1,44 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useNavigate } from "react-router-dom";
 
 const menuItems = [
-  { label: "صفحه اصلی", href: "#" },
-  { label: "وام شخصی", href: "#personal-loans" },
-  { label: "وام تجاری", href: "#business-loans" },
-  { label: "نحوه کار", href: "#how-it-works" },
-  { label: "درباره ما", href: "#about" }
+  { label: "صفحه اصلی", href: "/" },
+  { label: "وام شخصی", href: "/loan-request" },
+  { label: "وام تجاری", href: "/loan-request" },
+  { label: "نحوه کار", href: "/#how-it-works" },
+  { label: "درباره ما", href: "/contact" }
 ];
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleNavigation = (path: string) => {
+    setIsMenuOpen(false);
+    if (path.startsWith('#')) {
+      // For hash links on current page
+      window.location.hash = path.substring(1);
+    } else {
+      // For separate pages
+      navigate(path);
+    }
+  };
+
+  const handleLoanRequest = () => {
+    navigate("/loan-request");
+  };
+
+  const handleLogin = () => {
+    // In a real app, navigate to login page
+    console.log("Login button clicked");
   };
 
   return (
@@ -40,6 +62,10 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 className="px-3 py-2 text-sm font-medium text-gray-700 hover:text-primary rounded-md transition-colors duration-200"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation(item.href);
+                }}
               >
                 {item.label}
               </a>
@@ -48,10 +74,17 @@ const Header = () => {
 
           {/* Call to Action */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
+            <Button 
+              variant="outline" 
+              className="border-primary text-primary hover:bg-primary hover:text-white"
+              onClick={handleLogin}
+            >
               ورود
             </Button>
-            <Button className="bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg transition-all">
+            <Button 
+              className="bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg transition-all"
+              onClick={handleLoanRequest}
+            >
               درخواست وام
             </Button>
           </div>
@@ -79,17 +112,27 @@ const Header = () => {
                 key={item.label}
                 href={item.href}
                 className="px-3 py-4 text-base font-medium text-gray-800 hover:text-primary border-b border-gray-100"
-                onClick={toggleMenu}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavigation(item.href);
+                }}
               >
                 {item.label}
               </a>
             ))}
           </nav>
           <div className="grid grid-cols-2 gap-4 pt-4">
-            <Button variant="outline" className="w-full border-primary text-primary">
+            <Button 
+              variant="outline" 
+              className="w-full border-primary text-primary"
+              onClick={handleLogin}
+            >
               ورود
             </Button>
-            <Button className="w-full bg-primary text-white shadow-md">
+            <Button 
+              className="w-full bg-primary text-white shadow-md"
+              onClick={handleLoanRequest}
+            >
               درخواست وام
             </Button>
           </div>

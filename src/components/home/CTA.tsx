@@ -8,17 +8,17 @@ const CTA = () => {
   const navigate = useNavigate();
 
   const handleLoanRequest = () => {
-    navigate("#loan-request");
+    navigate("/loan-request");
     toast({
       title: "درخواست وام",
-      description: "فرم درخواست وام با موفقیت باز شد",
+      description: "به صفحه درخواست وام منتقل شدید",
       variant: "default",
     });
     console.log("Loan request button clicked");
   };
 
   const handleContactUs = () => {
-    navigate("#contact");
+    navigate("/contact");
     toast({
       title: "تماس با ما",
       description: "به صفحه تماس با ما منتقل شدید",
@@ -28,7 +28,7 @@ const CTA = () => {
   };
 
   return (
-    <section className="py-20 modern-gradient text-white">
+    <section className="py-20 modern-gradient text-white relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">

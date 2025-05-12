@@ -62,7 +62,7 @@ const LoanTypes = () => {
   const navigate = useNavigate();
 
   const handleViewAllLoans = () => {
-    navigate("#all-loans");
+    navigate("/all-loans");
     toast({
       title: "گزینه‌های وام",
       description: "در حال مشاهده تمام گزینه‌های وام هستید",
@@ -72,7 +72,7 @@ const LoanTypes = () => {
   };
 
   const handleLoanInfoClick = (loanType: string) => {
-    navigate(`#loan-info/${loanType}`);
+    navigate(`/loan-request`);
     toast({
       title: `اطلاعات ${loanType}`,
       description: `در حال مشاهده اطلاعات ${loanType} هستید`,
