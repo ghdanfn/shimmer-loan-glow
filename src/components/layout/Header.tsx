@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useNavigate } from "react-router-dom";
+import Logo from "./Logo";
 
 const menuItems = [
   { label: "صفحه اصلی", href: "/" },
@@ -47,11 +48,15 @@ const Header = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <a href="/" className="flex items-center">
-              <span className="text-2xl font-bold">
-                <span className="text-primary">لــن</span>
-                <span className="text-secondary">تک</span>
-              </span>
+            <a 
+              href="/" 
+              className="flex items-center"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation("/");
+              }}
+            >
+              <Logo />
             </a>
           </div>
 

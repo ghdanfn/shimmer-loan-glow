@@ -28,7 +28,7 @@ const CTA = () => {
   };
 
   return (
-    <section className="py-20 modern-gradient text-white relative overflow-hidden">
+    <section className="py-20 bg-gradient-to-br from-primary/90 to-secondary/90 text-white relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">

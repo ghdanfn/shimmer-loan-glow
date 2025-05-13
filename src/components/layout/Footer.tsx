@@ -2,6 +2,7 @@
 import { Facebook, Instagram, Twitter, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -11,8 +12,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <h3 className="text-xl font-bold mb-4 flex items-center">
-              <span className="text-primary">لـن</span>
-              <span className="text-secondary">تک</span>
+              <Logo className="text-white" />
             </h3>
             <p className="text-gray-300 mb-6">
               ارائه وام‌های قابل دسترسی برای همه با شرایط شفاف و نرخ‌های رقابتی.
