@@ -7,35 +7,35 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 222 47% 11%;
+    --background: 230 25% 12%;
+    --foreground: 210 40% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card: 230 30% 15%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover: 230 30% 15%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 37 95% 58%;
+    --primary: 276 100% 64%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 27 98% 54%;
+    --secondary: 184 100% 55%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 230 25% 25%;
+    --muted-foreground: 215.4 16.3% 75%;
 
-    --accent: 220 79% 51%;
+    --accent: 172 100% 50%;
     --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 100% 65%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 37 95% 58%;
+    --border: 230 25% 25%;
+    --input: 230 25% 25%;
+    --ring: 276 100% 64%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
   }
 }
 
@@ -53,7 +53,7 @@
 
 @layer components {
   .gradient-text {
-    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary/90 to-secondary;
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent to-secondary;
   }
   
   .section-padding {
@@ -77,21 +77,52 @@
     @apply focus:ring-2 focus:ring-primary/30 focus:border-primary;
   }
 
-  /* Modern UI components */
+  /* Cyberpunk UI components */
   .glass-card {
-    @apply bg-white/70 backdrop-blur-sm border border-white/20 shadow-lg rounded-xl;
+    @apply bg-card/70 backdrop-blur-md border border-accent/20 shadow-lg rounded-md;
   }
   
-  .modern-gradient {
-    @apply bg-gradient-to-br from-primary/90 to-secondary/90;
+  .neon-border {
+    @apply border border-accent shadow-[0_0_8px_rgba(0,255,255,0.8)];
+  }
+  
+  .neon-text {
+    @apply text-accent drop-shadow-[0_0_8px_rgba(0,255,255,0.8)];
+  }
+  
+  .cyber-gradient {
+    @apply bg-gradient-to-br from-primary via-accent/50 to-secondary;
+  }
+  
+  .cyber-button {
+    @apply bg-transparent border border-accent text-accent hover:bg-accent/20 transition-colors duration-300;
   }
   
   .hover-scale {
     @apply transition-transform hover:scale-105 duration-300;
   }
-  
+
   .button-modern {
-    @apply rounded-xl py-4 px-6 font-medium transition-all duration-300;
+    @apply rounded-md py-3 px-5 font-medium transition-all duration-300;
+  }
+  
+  .glitch {
+    @apply relative;
+  }
+  
+  .glitch::before,
+  .glitch::after {
+    @apply absolute top-0 left-0 w-full h-full opacity-70;
+    content: attr(data-text);
+    clip: rect(0, 0, 0, 0);
+  }
+  
+  .glitch::before {
+    @apply text-primary left-[2px] animate-glitch-1;
+  }
+  
+  .glitch::after {
+    @apply text-secondary left-[-2px] animate-glitch-2;
   }
 }
 
@@ -103,12 +134,49 @@
   --tw-space-x-reverse: 1;
 }
 
-/* Modern animations */
+/* Cyberpunk animations */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
 
+@keyframes glitch-1 {
+  0% { clip: rect(20px, 9999px, 15px, 0); }
+  10% { clip: rect(42px, 9999px, 38px, 0); }
+  20% { clip: rect(61px, 9999px, 4px, 0); }
+  30% { clip: rect(27px, 9999px, 29px, 0); }
+  40% { clip: rect(0, 9999px, 38px, 0); }
+  50% { clip: rect(32px, 9999px, 12px, 0); }
+  60% { clip: rect(19px, 9999px, 56px, 0); }
+  70% { clip: rect(48px, 9999px, 56px, 0); }
+  80% { clip: rect(45px, 9999px, 3px, 0); }
+  90% { clip: rect(31px, 9999px, 31px, 0); }
+  100% { clip: rect(8px, 9999px, 31px, 0); }
+}
+
+@keyframes glitch-2 {
+  0% { clip: rect(12px, 9999px, 61px, 0); }
+  10% { clip: rect(4px, 9999px, 3px, 0); }
+  20% { clip: rect(46px, 9999px, 7px, 0); }
+  30% { clip: rect(50px, 9999px, 37px, 0); }
+  40% { clip: rect(63px, 9999px, 36px, 0); }
+  50% { clip: rect(46px, 9999px, 33px, 0); }
+  60% { clip: rect(22px, 9999px, 23px, 0); }
+  70% { clip: rect(35px, 9999px, 6px, 0); }
+  80% { clip: rect(50px, 9999px, 47px, 0); }
+  90% { clip: rect(0, 9999px, 8px, 0); }
+  100% { clip: rect(63px, 9999px, 46px, 0); }
+}
+
 .animate-float {
   animation: float 6s ease-in-out infinite;
 }
+
+.animate-glitch-1 {
+  animation: glitch-1 0.5s infinite linear alternate-reverse;
+}
+
+.animate-glitch-2 {
+  animation: glitch-2 0.5s infinite linear alternate-reverse;
+}
+

@@ -89,6 +89,17 @@ export default {
         pulse: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.7' },
+        },
+        'glitch-1': {
+          '0%': { clip: 'rect(20px, 9999px, 15px, 0)' },
+          '10%': { clip: 'rect(42px, 9999px, 38px, 0)' },
+          '20%': { clip: 'rect(61px, 9999px, 4px, 0)' },
+          '100%': { clip: 'rect(8px, 9999px, 31px, 0)' },
+        },
+        'glitch-2': {
+          '0%': { clip: 'rect(12px, 9999px, 61px, 0)' },
+          '50%': { clip: 'rect(46px, 9999px, 33px, 0)' },
+          '100%': { clip: 'rect(63px, 9999px, 46px, 0)' },
         }
       },
       animation: {
@@ -97,11 +108,14 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'shimmer': 'shimmer 2s linear infinite',
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'glitch-1': 'glitch-1 0.5s infinite linear alternate-reverse',
+        'glitch-2': 'glitch-2 0.5s infinite linear alternate-reverse',
       },
       boxShadow: {
-        'soft': '0 4px 20px rgba(0, 0, 0, 0.05)',
-        'card': '0px 4px 12px rgba(0, 0, 0, 0.05)',
-        'hover': '0 10px 25px rgba(0, 0, 0, 0.08)',
+        'soft': '0 4px 20px rgba(0, 0, 0, 0.2)',
+        'neon': '0 0 10px rgba(154, 0, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5)',
+        'card': '0px 4px 15px rgba(0, 0, 0, 0.3)',
+        'hover': '0 10px 25px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 255, 255, 0.5)',
       },
     }
   },
