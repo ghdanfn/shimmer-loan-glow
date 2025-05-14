@@ -1,5 +1,4 @@
-
-@import url('https://cdn.jsdelivr.net/gh/intuxicated/css-persian/dist/fontiran.min.css');
+@import url('https://cdn.jsdelivr.net/gh/DediData/Yekan-Font@master/dist/Yekan.css');
 
 @tailwind base;
 @tailwind components;
@@ -7,33 +6,33 @@
 
 @layer base {
   :root {
-    --background: 230 25% 12%;
-    --foreground: 210 40% 98%;
+    --background: 210 33% 99%;
+    --foreground: 222 47% 11%;
 
-    --card: 230 30% 15%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
 
-    --popover: 230 30% 15%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 276 100% 64%;
+    --primary: 206 100% 34%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 184 100% 55%;
+    --secondary: 196 100% 40%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 230 25% 25%;
-    --muted-foreground: 215.4 16.3% 75%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 172 100% 50%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 196 98% 58%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 100% 65%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 230 25% 25%;
-    --input: 230 25% 25%;
-    --ring: 276 100% 64%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 206 100% 34%;
 
     --radius: 0.5rem;
   }
@@ -47,7 +46,7 @@
     @apply bg-background text-foreground font-sans;
   }
   html, body {
-    font-family: 'iranyekan', 'IRANYekan', 'sans-serif';
+    font-family: 'Yekan', 'iranyekan', 'IRANYekan', 'sans-serif';
   }
 }
 
@@ -179,4 +178,3 @@
 .animate-glitch-2 {
   animation: glitch-2 0.5s infinite linear alternate-reverse;
 }
-

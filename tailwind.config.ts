@@ -113,9 +113,9 @@ export default {
       },
       boxShadow: {
         'soft': '0 4px 20px rgba(0, 0, 0, 0.2)',
-        'neon': '0 0 10px rgba(154, 0, 255, 0.7), 0 0 20px rgba(0, 255, 255, 0.5)',
+        'neon': '0 0 10px rgba(0, 83, 166, 0.7), 0 0 20px rgba(0, 121, 193, 0.5)',
         'card': '0px 4px 15px rgba(0, 0, 0, 0.3)',
-        'hover': '0 10px 25px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 255, 255, 0.5)',
+        'hover': '0 10px 25px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 121, 193, 0.5)',
       },
     }
   },
