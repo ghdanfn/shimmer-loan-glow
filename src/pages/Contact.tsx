@@ -1,4 +1,3 @@
-
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,19 +5,16 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { toast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
-
 const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "پیام شما دریافت شد",
       description: "کارشناسان ما به زودی به پیام شما پاسخ خواهند داد",
-      variant: "default",
+      variant: "default"
     });
   };
-
-  return (
-    <div className="min-h-screen flex flex-col" dir="rtl">
+  return <div className="min-h-screen flex flex-col" dir="rtl">
       <Header />
       <main className="flex-1">
         <section className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-gray-100">
@@ -83,7 +79,7 @@ const Contact = () => {
                       </div>
                       <div>
                         <h3 className="font-medium text-lg">ایمیل</h3>
-                        <p className="text-gray-600 mt-1">info@lentak.ir</p>
+                        <p className="text-gray-600 mt-1">info@lentech.ir</p>
                       </div>
                     </div>
                     
@@ -104,7 +100,8 @@ const Contact = () => {
                       <div>
                         <h3 className="font-medium text-lg">ساعات کاری</h3>
                         <p className="text-gray-600 mt-1">شنبه تا چهارشنبه: ۹ صبح تا ۵ بعد از ظهر</p>
-                        <p className="text-gray-600">پنج‌شنبه: ۹ صبح تا ۱ بعد از ظهر</p>
+                        <p className="text-gray-600">
+                      </p>
                       </div>
                     </div>
                   </div>
@@ -115,8 +112,6 @@ const Contact = () => {
         </section>
       </main>
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default Contact;
