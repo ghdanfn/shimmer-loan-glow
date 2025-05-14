@@ -16,6 +16,10 @@ const LoanRequest = () => {
       description: "کارشناسان ما به زودی با شما تماس خواهند گرفت",
       variant: "default",
     });
+    // Navigate to homepage after successful submission
+    setTimeout(() => {
+      navigate("/");
+    }, 2000);
   };
 
   return (
