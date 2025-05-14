@@ -4,11 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
 import { ArrowLeft } from "lucide-react"; 
+import { useNavigate } from "react-router-dom";
+import { toast } from "@/hooks/use-toast";
 
 const LoanCalculator = () => {
   const [loanAmount, setLoanAmount] = useState(10000);
   const [loanTerm, setLoanTerm] = useState(12);
   const [loanType, setLoanType] = useState("personal");
+  const navigate = useNavigate();
 
   const interestRates = {
     personal: 0.089, // 8.9%
@@ -32,7 +35,13 @@ const LoanCalculator = () => {
       type: loanType,
       monthlyPayment: calculateMonthlyPayment()
     });
-    // In a real application, this would submit the loan application
+    
+    navigate("/loan-request");
+    toast({
+      title: "درخواست وام",
+      description: "به صفحه درخواست وام منتقل شدید",
+      variant: "default",
+    });
   };
 
   const monthlyPayment = calculateMonthlyPayment();
@@ -132,6 +141,28 @@ const LoanCalculator = () => {
 };
 
 const Hero = () => {
+  const navigate = useNavigate();
+  
+  const handleStartClick = () => {
+    navigate("/loan-request");
+    toast({
+      title: "شروع درخواست وام",
+      description: "به صفحه درخواست وام منتقل شدید",
+      variant: "default",
+    });
+    console.log("Start button clicked");
+  };
+  
+  const handleMoreInfoClick = () => {
+    navigate("/all-loans");
+    toast({
+      title: "اطلاعات بیشتر",
+      description: "به صفحه اطلاعات بیشتر منتقل شدید",
+      variant: "default",
+    });
+    console.log("More info button clicked");
+  };
+
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 py-16 md:py-24">
       <div className="container mx-auto px-4">
@@ -145,11 +176,18 @@ const Hero = () => {
               به صورت آنلاین درخواست دهید و تصمیمات تأیید سریع دریافت کنید.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 sm:space-x-reverse">
-              <Button className="bg-primary hover:bg-primary/90 text-white font-medium py-6 px-8 text-lg shadow-lg hover:shadow-xl transition-all">
+              <Button 
+                onClick={handleStartClick}
+                className="bg-primary hover:bg-primary/90 text-white font-medium py-6 px-8 text-lg shadow-lg hover:shadow-xl transition-all"
+              >
                 شروع کنید
                 <ArrowLeft className="mr-2 h-5 w-5" />
               </Button>
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary/10 font-medium py-6 px-8 text-lg transition-all">
+              <Button 
+                onClick={handleMoreInfoClick}
+                variant="outline" 
+                className="border-primary text-primary hover:bg-primary/10 font-medium py-6 px-8 text-lg transition-all"
+              >
                 اطلاعات بیشتر
               </Button>
             </div>

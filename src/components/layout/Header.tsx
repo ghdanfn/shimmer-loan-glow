@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useNavigate } from "react-router-dom";
 import Logo from "./Logo";
+import { toast } from "@/hooks/use-toast";
 
 const menuItems = [
   { label: "صفحه اصلی", href: "/" },
@@ -24,21 +25,49 @@ const Header = () => {
 
   const handleNavigation = (path: string) => {
     setIsMenuOpen(false);
-    if (path.startsWith('#')) {
+    if (path.startsWith('/#')) {
       // For hash links on current page
-      window.location.hash = path.substring(1);
+      const element = document.getElementById(path.substring(2));
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        // If not on the homepage, navigate there first
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById(path.substring(2));
+          if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
     } else {
       // For separate pages
       navigate(path);
+      
+      // Show toast for navigation
+      const pageName = menuItems.find(item => item.href === path)?.label || "صفحه";
+      toast({
+        title: `${pageName}`,
+        description: `به ${pageName} منتقل شدید`,
+        variant: "default",
+      });
     }
   };
 
   const handleLoanRequest = () => {
     navigate("/loan-request");
+    toast({
+      title: "درخواست وام",
+      description: "به صفحه درخواست وام منتقل شدید",
+      variant: "default",
+    });
   };
 
   const handleLogin = () => {
     // In a real app, navigate to login page
+    toast({
+      title: "ورود به حساب کاربری",
+      description: "این بخش در حال تکمیل است",
+      variant: "default",
+    });
     console.log("Login button clicked");
   };
 
