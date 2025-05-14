@@ -1,7 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, LogIn } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useNavigate } from "react-router-dom";
 import Logo from "./Logo";
@@ -62,13 +62,15 @@ const Header = () => {
   };
 
   const handleLogin = () => {
-    // In a real app, navigate to login page
+    // Navigate to a login page
+    navigate("/login");
+    
     toast({
       title: "ورود به حساب کاربری",
-      description: "این بخش در حال تکمیل است",
+      description: "به صفحه ورود به حساب کاربری منتقل شدید",
       variant: "default",
     });
-    console.log("Login button clicked");
+    console.log("Login button clicked - navigating to login page");
   };
 
   return (
@@ -110,9 +112,10 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Button 
               variant="outline" 
-              className="border-primary text-primary hover:bg-primary hover:text-white"
+              className="border-primary text-primary hover:bg-primary hover:text-white flex items-center gap-2"
               onClick={handleLogin}
             >
+              <LogIn size={18} />
               ورود
             </Button>
             <Button 
@@ -158,9 +161,10 @@ const Header = () => {
           <div className="grid grid-cols-2 gap-4 pt-4">
             <Button 
               variant="outline" 
-              className="w-full border-primary text-primary"
+              className="w-full border-primary text-primary flex items-center justify-center gap-2"
               onClick={handleLogin}
             >
+              <LogIn size={18} />
               ورود
             </Button>
             <Button 

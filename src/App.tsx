@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import LoanRequest from "./pages/LoanRequest";
 import Contact from "./pages/Contact";
 import AllLoans from "./pages/AllLoans";
+import Login from "./pages/Login";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/loan-request" element={<LoanRequest />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/all-loans" element={<AllLoans />} />
+          <Route path="/login" element={<Login />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
