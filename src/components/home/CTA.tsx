@@ -1,34 +1,28 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "@/hooks/use-toast";
-
 const CTA = () => {
   const navigate = useNavigate();
-
   const handleLoanRequest = () => {
     navigate("/loan-request");
     toast({
       title: "درخواست وام",
       description: "به صفحه درخواست وام منتقل شدید",
-      variant: "default",
+      variant: "default"
     });
     console.log("Loan request button clicked");
   };
-
   const handleContactUs = () => {
     navigate("/contact");
     toast({
       title: "تماس با ما",
       description: "به صفحه تماس با ما منتقل شدید",
-      variant: "default",
+      variant: "default"
     });
     console.log("Contact us button clicked");
   };
-
-  return (
-    <section className="py-20 bg-gradient-to-br from-primary/90 to-secondary/90 text-white relative overflow-hidden">
+  return <section className="py-20 bg-gradient-to-br from-primary/90 to-secondary/90 text-white relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8">
@@ -39,20 +33,11 @@ const CTA = () => {
             فرآیند درخواست ساده و نرخ‌های رقابتی ما، وام گرفتن را آسان می‌کند.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
-            <Button 
-              size="lg" 
-              className="bg-white text-primary hover:bg-gray-100 px-8 py-7 text-lg shadow-lg hover:shadow-xl transition-all button-modern hover-scale"
-              onClick={handleLoanRequest}
-            >
+            <Button size="lg" className="bg-white text-primary hover:bg-gray-100 px-8 py-7 text-lg shadow-lg hover:shadow-xl transition-all button-modern hover-scale" onClick={handleLoanRequest}>
               <ArrowLeft className="ml-2 h-5 w-5" />
               درخواست اکنون
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white/10 px-8 py-7 text-lg transition-all button-modern"
-              onClick={handleContactUs}
-            >
+            <Button size="lg" variant="outline" onClick={handleContactUs} className="border-white text-white hover:bg-white/10 px-8 py-7 text-lg transition-all button-modern">
               اطلاعات بیشتر
             </Button>
           </div>
@@ -66,8 +51,6 @@ const CTA = () => {
       <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-white/5 to-transparent"></div>
       <div className="absolute top-10 right-10 w-32 h-32 bg-white/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-10 left-10 w-48 h-48 bg-white/5 rounded-full blur-3xl"></div>
-    </section>
-  );
+    </section>;
 };
-
 export default CTA;
